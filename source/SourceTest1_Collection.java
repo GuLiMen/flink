@@ -12,6 +12,9 @@ import com.atguigu.apitest.beans.SensorReading;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.table.api.Table;
+import org.apache.flink.table.api.java.StreamTableEnvironment;
+import org.apache.flink.types.Row;
 
 import java.util.Arrays;
 
@@ -25,6 +28,8 @@ public class SourceTest1_Collection {
     public static void main(String[] args) throws Exception{
         // 创建执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
+        StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
         env.setParallelism(1);
 
         // 从集合中读取数据
@@ -35,11 +40,17 @@ public class SourceTest1_Collection {
                 new SensorReading("sensor_10", 1547718205L, 38.1)
         ));
 
+        tableEnv.createTemporaryView("tmp",dataStream);
+
+        Table table = tableEnv.sqlQuery("select * from tmp where id = 'sensor_7'");
+        tableEnv.toAppendStream(table, Row.class).print("result");
+
+
         DataStream<Integer> integerDataStream = env.fromElements(1, 2, 4, 67, 189);
 
         // 打印输出
-        dataStream.print("data");
-        integerDataStream.print("int");
+//        dataStream.print("data");
+//        integerDataStream.print("int");
 
         // 执行
         env.execute();

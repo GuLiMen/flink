@@ -1,4 +1,5 @@
 package com.atguigu.apitest.state;
+
 /**
  * Copyright (c) 2018-2028 尚硅谷 All Rights Reserved
  * <p>
@@ -15,7 +16,6 @@ import org.apache.flink.streaming.api.checkpoint.ListCheckpointed;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-
 import java.util.Collections;
 import java.util.List;
 

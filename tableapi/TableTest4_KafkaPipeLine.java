@@ -64,9 +64,9 @@ public class TableTest4_KafkaPipeLine {
         )
                 .withFormat(new Csv())
                 .withSchema(new Schema()
-                        .field("id", DataTypes.STRING())
+                                .field("id", DataTypes.STRING())
 //                        .field("timestamp", DataTypes.BIGINT())
-                        .field("temp", DataTypes.DOUBLE())
+                                .field("temp", DataTypes.DOUBLE())
                 )
                 .createTemporaryTable("outputTable");
 

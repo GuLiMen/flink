@@ -88,7 +88,7 @@ public class TableTest2_CommonApi {
                 .select("id, id.count as count, temp.avg as avgTemp");
 
         // 3.2 SQL
-        tableEnv.sqlQuery("select id, temp from inputTable where id = 'senosr_6'");
+        tableEnv.sqlQuery(" select id, temp from inputTable where id = 'senosr_6' ");
         Table sqlAggTable = tableEnv.sqlQuery("select id, count(id) as cnt, avg(temp) as avgTemp from inputTable group by id");
 
         // 打印输出

@@ -5,7 +5,7 @@ package com.atguigu.apitest.window;/**
  * Package: com.atguigu.apitest.window
  * Version: 1.0
  * <p>
- * Created by wushengran on 2020/11/9 14:37
+ * Created by gulimeng on 2020/11/9 14:37
  */
 
 import com.atguigu.apitest.beans.SensorReading;
@@ -114,7 +114,6 @@ public class WindowTest1_TimeWindow {
         sumStream.getSideOutput(outputTag).print("late");
 
         resultStream2.print();
-
 
         env.execute();
     }

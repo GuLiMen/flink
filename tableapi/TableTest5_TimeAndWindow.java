@@ -1,4 +1,5 @@
-package com.atguigu.apitest.tableapi;/**
+package com.atguigu.apitest.tableapi;
+/**
  * Copyright (c) 2018-2028 尚硅谷 All Rights Reserved
  * <p>
  * Project: FlinkTutorial
@@ -24,7 +25,7 @@ import org.apache.flink.types.Row;
 /**
  * @ClassName: TableTest5_TimeAndWindow
  * @Description:
- * @Author: wushengran on 2020/11/13 15:45
+ * @Author: gulimeng on 2020/11/13 15:45
  * @Version: 1.0
  */
 public class TableTest5_TimeAndWindow {

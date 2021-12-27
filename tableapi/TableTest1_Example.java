@@ -47,6 +47,8 @@ public class TableTest1_Example {
         Table resultTable = dataTable.select("id, temperature")
                 .where("id = 'sensor_1'");
 
+
+
         // 6. 执行SQL
         tableEnv.createTemporaryView("sensor", dataTable);
         String sql = "select id, temperature from sensor where id = 'sensor_1' ";
