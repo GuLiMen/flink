@@ -25,6 +25,7 @@ import org.apache.flink.util.OutputTag;
  * @Version: 1.0
  */
 public class WindowTest3_EventTimeWindow {
+
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 //        env.setParallelism(1);
